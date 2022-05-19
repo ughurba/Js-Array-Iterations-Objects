@@ -31,9 +31,9 @@ const new_array = arr.map((value) => {
     for (const key in monthObj) {
 
       if (value === key){
-        
+      
         return value += monthObj[key]
-        
+       
       }
 
     }  
@@ -44,13 +44,24 @@ const new_array = arr.map((value) => {
  
   let newArr = filterArr.map(item => item.split('-'))
   
-   return newArr.sort((a,b)=> a[1] - b[1])
-    
+ let sortArray =  newArr.sort((a,b)=> a[1] - b[1])
+
+    const monthsNumber = sortArray.map(item => item[1])
+  
+      const monthString = sortArray.map(item => item[0])
+ 
+
+     const orr = monthString.map((item, index) => {
+        
+      return item += -monthsNumber[index]
+       
+       
+      });  
+  
+    return orr
 }
 
-console.log(month(["Avgust", "Fevral", "Mart", "Aprel","Dekabr", "May", "Iyun","Yanvar"]));
-
-
+console.log(month(["Dekabr", "Fevral","Noyabr","Sentyabr", "Mart", "Aprel","Iyul","Oktyabr", "May", "Iyun","Yanvar"]));
 
 
 //  4)String qebul eden bir function yaziriq. Hemin function yeni bir array qaytaracaq, hemin arrayin elementleri
