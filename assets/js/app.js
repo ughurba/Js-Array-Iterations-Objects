@@ -41,24 +41,14 @@ const new_array = arr.map((value) => {
   });
 
   let filterArr= new_array.filter(item => item !== undefined)
-  console.log(filterArr);
-
-  filterArr.forEach(value => {
-
-    console.log(value.slice(5));
-  });
-
-
-
-
  
-
- 
+  let newArr = filterArr.map(item => item.split('-'))
+  
+   return newArr.sort((a,b)=> a[1] - b[1])
+    
 }
 
-console.log(month(["Dekabr", "Fevral", "Mart", "Aprel", "May", "Iyun","dsd","sadsa"]));
-
-
+console.log(month(["Avgust", "Fevral", "Mart", "Aprel","Dekabr", "May", "Iyun","Yanvar"]));
 
 
 
